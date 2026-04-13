@@ -150,16 +150,11 @@ public static class UIHelper
         img.color = bgColor;
         img.raycastTarget = true;
 
-        // 라운드 코너: Knob 빌트인 스프라이트
+        // 라운드 코너: 프로시저럴 스프라이트 (빌트인 의존 없음)
         if (cornerRadius > 0f)
         {
-            var knob = Resources.GetBuiltinResource<Sprite>("UI/Skin/Knob.psd");
-            if (knob != null)
-            {
-                img.sprite = knob;
-                img.type = Image.Type.Sliced;
-                img.pixelsPerUnitMultiplier = Mathf.Max(1f, 20f / cornerRadius);
-            }
+            img.sprite = GetRoundedSprite();
+            img.type = Image.Type.Sliced;
         }
 
         return go;
@@ -221,6 +216,46 @@ public static class UIHelper
         img.raycastTarget = false;
 
         return go;
+    }
+
+    // ====== Rounded Sprite (cached) ======
+
+    private static Sprite _roundedSprite;
+
+    /// <summary>9-slice 가능한 라운드 사각형 스프라이트 (런타임 생성, 캐시).</summary>
+    private static Sprite GetRoundedSprite()
+    {
+        if (_roundedSprite != null) return _roundedSprite;
+
+        int size = 32;
+        int radius = 10;
+        var tex = new Texture2D(size, size, TextureFormat.RGBA32, false);
+        float center = size / 2f;
+
+        for (int y = 0; y < size; y++)
+        {
+            for (int x = 0; x < size; x++)
+            {
+                // 가장 가까운 코너까지의 거리로 라운드 판정
+                float dx = Mathf.Max(0, Mathf.Abs(x - center + 0.5f) - (center - radius));
+                float dy = Mathf.Max(0, Mathf.Abs(y - center + 0.5f) - (center - radius));
+                float dist = Mathf.Sqrt(dx * dx + dy * dy);
+                float alpha = Mathf.Clamp01((radius - dist) + 0.5f); // anti-alias
+                tex.SetPixel(x, y, new Color(1, 1, 1, alpha));
+            }
+        }
+        tex.Apply();
+        tex.filterMode = FilterMode.Bilinear;
+        tex.wrapMode = TextureWrapMode.Clamp;
+
+        // 9-slice border = radius
+        var border = new Vector4(radius, radius, radius, radius);
+        _roundedSprite = Sprite.Create(tex,
+            new Rect(0, 0, size, size),
+            new Vector2(0.5f, 0.5f),
+            100f, 0, SpriteMeshType.FullRect, border);
+
+        return _roundedSprite;
     }
 
     /// <summary>전체 화면 오버레이</summary>
