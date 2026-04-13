@@ -1,0 +1,86 @@
+{
+  "screen": "GameHUD",
+  "elements": [
+    {
+      "id": "topHUD",
+      "type": "column",
+      "anchor": "TC",
+      "w": "sw:0.95",
+      "h": "auto",
+      "gap": "Gap.sm",
+      "padding": "Padding.sm 0",
+      "children": [
+        {
+          "id": "scoreRow",
+          "type": "row",
+          "h": "sh:0.032",
+          "children": [
+            { "type": "text", "text": "SCORE", "font": "Label.Medium", "color": "Text.Muted", "w": "rw:1", "align": "left" },
+            { "id": "scoreText", "type": "text", "text": "$score", "font": "Headline.Medium", "color": "Accent.Primary", "w": "rw:2", "align": "right", "fontStyle": "bold" }
+          ]
+        },
+        {
+          "id": "turnsRow",
+          "type": "row",
+          "h": "sh:0.025",
+          "children": [
+            { "type": "text", "text": "MOVES", "font": "Label.Small", "color": "Text.Muted", "w": "rw:1", "align": "left" },
+            { "id": "turnsText", "type": "text", "text": "$turns", "font": "Title.Medium", "color": "Status.Warning", "w": "rw:1", "align": "right", "fontStyle": "bold" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gradePopup",
+      "type": "text",
+      "anchor": "MC",
+      "y": "sh:0.15",
+      "text": "$gradeText",
+      "font": "Display.Medium",
+      "color": "Accent.Primary",
+      "w": "sw:0.8",
+      "h": "sh:0.06",
+      "align": "center",
+      "fontStyle": "bold",
+      "visible": "$showGrade"
+    },
+    {
+      "id": "goalRow",
+      "type": "row",
+      "anchor": "BC",
+      "y": "cu:10",
+      "w": "sw:0.9",
+      "h": "sh:0.05",
+      "gap": "Gap.sm",
+      "children": [
+        { "id": "goal0", "type": "panel", "w": "rw:1", "h": "ph:1.0", "bg": "Bg.Panel", "visible": "$g0vis",
+          "children": [
+            { "type": "text", "text": "$g0text", "font": "Label.Medium", "color": "Text.Primary", "w": "pw:1.0", "h": "ph:1.0", "align": "center" }
+          ]
+        },
+        { "id": "goal1", "type": "panel", "w": "rw:1", "h": "ph:1.0", "bg": "Bg.Panel", "visible": "$g1vis",
+          "children": [
+            { "type": "text", "text": "$g1text", "font": "Label.Medium", "color": "Text.Primary", "w": "pw:1.0", "h": "ph:1.0", "align": "center" }
+          ]
+        },
+        { "id": "goal2", "type": "panel", "w": "rw:1", "h": "ph:1.0", "bg": "Bg.Panel", "visible": "$g2vis",
+          "children": [
+            { "type": "text", "text": "$g2text", "font": "Label.Medium", "color": "Text.Primary", "w": "pw:1.0", "h": "ph:1.0", "align": "center" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pauseBtn",
+      "type": "button",
+      "anchor": "TR",
+      "x": "cu:-20",
+      "y": "cu:-20",
+      "w": "cu:50",
+      "h": "cu:50",
+      "buttonType": "ghost",
+      "action": "onPause",
+      "label": "||"
+    }
+  ]
+}

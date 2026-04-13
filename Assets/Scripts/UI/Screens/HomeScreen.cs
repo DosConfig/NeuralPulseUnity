@@ -24,8 +24,7 @@ public class HomeScreen : MonoBehaviour
 
     private void OnPlay()
     {
-        Debug.Log("[Home] Play → WorldMap or GameScreen");
-        // UIManager.SwitchTo(GameScreen.Create);
+        UIManager.SwitchTo((parent) => GameScreen.Create(parent));
     }
 
     private void OnDaily()

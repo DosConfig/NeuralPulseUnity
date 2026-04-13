@@ -150,14 +150,16 @@ public static class UIHelper
         img.color = bgColor;
         img.raycastTarget = true;
 
-        // 라운드 코너: Unity 2021.2+의 pixelsPerUnitMultiplier 트릭
-        // 또는 9-slice sprite 사용
+        // 라운드 코너: Knob 빌트인 스프라이트
         if (cornerRadius > 0f)
         {
-            // 기본 Knob 스프라이트를 사용해 라운드 느낌
-            img.sprite = Resources.GetBuiltinResource<Sprite>("UI/Skin/UISprite.psd");
-            img.type = Image.Type.Sliced;
-            img.pixelsPerUnitMultiplier = Mathf.Max(1f, 20f / cornerRadius);
+            var knob = Resources.GetBuiltinResource<Sprite>("UI/Skin/Knob.psd");
+            if (knob != null)
+            {
+                img.sprite = knob;
+                img.type = Image.Type.Sliced;
+                img.pixelsPerUnitMultiplier = Mathf.Max(1f, 20f / cornerRadius);
+            }
         }
 
         return go;

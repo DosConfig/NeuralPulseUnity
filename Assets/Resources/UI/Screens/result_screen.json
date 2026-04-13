@@ -1,0 +1,96 @@
+{
+  "screen": "ResultScreen",
+  "bg": "Bg.Darkest",
+  "elements": [
+    {
+      "id": "topSpacer",
+      "type": "panel",
+      "w": "pw:1.0",
+      "h": "sh:0.15"
+    },
+    {
+      "id": "content",
+      "type": "column",
+      "w": "sw:0.8",
+      "h": "auto",
+      "gap": "Gap.xl",
+      "children": [
+        {
+          "id": "resultTitle",
+          "type": "text",
+          "text": "$resultTitle",
+          "font": "Display.Medium",
+          "color": "Accent.Primary",
+          "align": "center",
+          "fontStyle": "bold"
+        },
+        {
+          "id": "stageLabel",
+          "type": "text",
+          "text": "$stageText",
+          "font": "Title.Large",
+          "color": "Text.Secondary",
+          "align": "center"
+        },
+        {
+          "id": "scoreCard",
+          "type": "panel",
+          "w": "pw:1.0",
+          "h": "sh:0.12",
+          "bg": "Bg.Panel",
+          "children": [
+            {
+              "type": "column",
+              "w": "pw:0.9",
+              "h": "ph:1.0",
+              "gap": "Gap.xs",
+              "children": [
+                { "type": "text", "text": "SCORE", "font": "Label.Medium", "color": "Text.Muted", "align": "center", "h": "ph:0.35" },
+                { "type": "text", "text": "$scoreText", "font": "Display.Small", "color": "Status.Gold", "align": "center", "fontStyle": "bold", "h": "ph:0.55" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "midSpacer",
+      "type": "panel",
+      "w": "pw:1.0",
+      "h": "expand"
+    },
+    {
+      "id": "buttons",
+      "type": "column",
+      "w": "sw:0.65",
+      "h": "auto",
+      "gap": "Gap.lg",
+      "children": [
+        {
+          "id": "continueBtn",
+          "type": "button",
+          "label": "CONTINUE",
+          "action": "onContinue",
+          "buttonType": "confirm",
+          "w": "pw:1.0",
+          "h": "sh:0.05"
+        },
+        {
+          "id": "homeBtn",
+          "type": "button",
+          "label": "HOME",
+          "action": "onHome",
+          "buttonType": "nav",
+          "w": "pw:1.0",
+          "h": "sh:0.045"
+        }
+      ]
+    },
+    {
+      "id": "bottomPad",
+      "type": "panel",
+      "w": "pw:1.0",
+      "h": "sh:0.08"
+    }
+  ]
+}

@@ -27,7 +27,15 @@ public class App : MonoBehaviour
         // 3. UIManager 초기화
         UIManager.Initialize(canvas.transform);
 
-        // 4. 첫 화면
+        // 4. 사운드 매니저
+        var soundGo = new GameObject("SoundManager");
+        DontDestroyOnLoad(soundGo);
+        soundGo.AddComponent<SoundManager>();
+
+        // 5. 카메라 설정
+        GameRenderer.Setup2DCamera(5.5f, new Color(0.04f, 0.04f, 0.06f));
+
+        // 6. 첫 화면
         UIManager.SwitchTo(SplashScreen.Create);
     }
 }
