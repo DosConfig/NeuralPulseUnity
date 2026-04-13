@@ -223,6 +223,7 @@ public static class UIHelper
     private static Sprite _roundedSprite;
 
     /// <summary>9-slice 가능한 라운드 사각형 스프라이트 (런타임 생성, 캐시).</summary>
+    public static Sprite GetRoundedSpritePublic() => GetRoundedSprite();
     private static Sprite GetRoundedSprite()
     {
         if (_roundedSprite != null) return _roundedSprite;
