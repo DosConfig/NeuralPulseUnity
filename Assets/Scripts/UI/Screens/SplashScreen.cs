@@ -37,8 +37,7 @@ public class SplashScreen : MonoBehaviour
 
     private void GoToHome()
     {
-        // 추후: HomeScreen으로 전환
-        Debug.Log("[SplashScreen] GoToHome");
+        UIManager.SwitchTo(HomeScreen.Create);
     }
 
     private void OnDestroy()

@@ -24,7 +24,10 @@ public class App : MonoBehaviour
         // 2. 테마 적용
         UITheme.Apply(UITheme.Palettes.CyberNeon);
 
-        // 3. 첫 화면
-        SplashScreen.Create(canvas.transform);
+        // 3. UIManager 초기화
+        UIManager.Initialize(canvas.transform);
+
+        // 4. 첫 화면
+        UIManager.SwitchTo(SplashScreen.Create);
     }
 }

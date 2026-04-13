@@ -1,0 +1,119 @@
+{
+  "screen": "HomeScreen",
+  "bg": "Bg.Dark",
+  "elements": [
+    {
+      "id": "topSpacer",
+      "type": "panel",
+      "w": "pw:1.0",
+      "h": "sh:0.12"
+    },
+    {
+      "id": "titleArea",
+      "type": "column",
+      "w": "sw:0.85",
+      "h": "auto",
+      "gap": "Gap.sm",
+      "children": [
+        {
+          "id": "gameTitle",
+          "type": "text",
+          "text": "NEURAL PULSE",
+          "font": "Display.Medium",
+          "color": "Accent.Primary",
+          "align": "center",
+          "fontStyle": "bold"
+        },
+        {
+          "id": "tagline",
+          "type": "text",
+          "text": "Match. Chain. Pulse.",
+          "font": "Body.Large",
+          "color": "Text.Muted",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "id": "midSpacer",
+      "type": "panel",
+      "w": "pw:1.0",
+      "h": "expand"
+    },
+    {
+      "id": "menuButtons",
+      "type": "column",
+      "w": "sw:0.7",
+      "h": "auto",
+      "gap": "Gap.lg",
+      "children": [
+        {
+          "id": "btnPlay",
+          "type": "button",
+          "label": "PLAY",
+          "action": "onPlay",
+          "buttonType": "confirm",
+          "w": "pw:1.0",
+          "h": "sh:0.055"
+        },
+        {
+          "id": "btnDaily",
+          "type": "button",
+          "label": "DAILY CHALLENGE",
+          "action": "onDaily",
+          "buttonType": "nav",
+          "w": "pw:1.0",
+          "h": "sh:0.048"
+        },
+        {
+          "id": "btnLeaderboard",
+          "type": "button",
+          "label": "LEADERBOARD",
+          "action": "onLeaderboard",
+          "buttonType": "nav",
+          "w": "pw:1.0",
+          "h": "sh:0.048"
+        }
+      ]
+    },
+    {
+      "id": "bottomSpacer",
+      "type": "panel",
+      "w": "pw:1.0",
+      "h": "sh:0.08"
+    },
+    {
+      "id": "bottomRow",
+      "type": "row",
+      "w": "sw:0.9",
+      "h": "sh:0.04",
+      "gap": "Gap.md",
+      "children": [
+        {
+          "id": "btnSettings",
+          "type": "button",
+          "label": "Settings",
+          "action": "onSettings",
+          "buttonType": "ghost",
+          "w": "rw:1",
+          "h": "ph:1.0"
+        },
+        {
+          "id": "btnProfile",
+          "type": "button",
+          "label": "Profile",
+          "action": "onProfile",
+          "buttonType": "ghost",
+          "w": "rw:1",
+          "h": "ph:1.0"
+        }
+      ]
+    },
+    {
+      "id": "bottomPad",
+      "type": "panel",
+      "w": "pw:1.0",
+      "h": "sh:0.03"
+    }
+  ]
+}

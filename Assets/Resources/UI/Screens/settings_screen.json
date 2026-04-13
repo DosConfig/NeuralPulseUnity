@@ -1,0 +1,161 @@
+{
+  "screen": "SettingsScreen",
+  "bg": "Bg.Dark",
+  "elements": [
+    {
+      "id": "topBar",
+      "type": "row",
+      "w": "sw:0.95",
+      "h": "sh:0.05",
+      "children": [
+        {
+          "id": "backBtn",
+          "type": "button",
+          "label": "< Back",
+          "action": "onBack",
+          "buttonType": "ghost",
+          "w": "rw:1",
+          "h": "ph:1.0"
+        },
+        {
+          "id": "titleText",
+          "type": "text",
+          "text": "Settings",
+          "font": "Headline.Large",
+          "color": "Text.Primary",
+          "align": "center",
+          "w": "rw:2"
+        },
+        {
+          "id": "spacer",
+          "type": "panel",
+          "w": "rw:1",
+          "h": "ph:1.0"
+        }
+      ]
+    },
+    {
+      "id": "content",
+      "type": "scroll",
+      "w": "sw:0.9",
+      "h": "expand",
+      "direction": "vertical",
+      "gap": "Gap.lg",
+      "children": [
+        {
+          "id": "soundSection",
+          "type": "column",
+          "w": "pw:1.0",
+          "h": "auto",
+          "gap": "Gap.sm",
+          "children": [
+            {
+              "type": "text",
+              "text": "Sound Volume",
+              "font": "Title.Medium",
+              "color": "Text.Primary",
+              "align": "left",
+              "w": "pw:1.0",
+              "h": "sh:0.03"
+            },
+            {
+              "id": "volumeSlider",
+              "type": "slider",
+              "w": "pw:1.0",
+              "h": "sh:0.035",
+              "action": "onVolumeChange"
+            }
+          ]
+        },
+        {
+          "id": "hapticSection",
+          "type": "row",
+          "w": "pw:1.0",
+          "h": "sh:0.045",
+          "children": [
+            {
+              "type": "text",
+              "text": "Haptic Feedback",
+              "font": "Body.Large",
+              "color": "Text.Primary",
+              "align": "left",
+              "w": "rw:2"
+            },
+            {
+              "id": "hapticToggle",
+              "type": "button",
+              "label": "$hapticLabel",
+              "action": "onHapticToggle",
+              "buttonType": "nav",
+              "w": "rw:1",
+              "h": "ph:0.8"
+            }
+          ]
+        },
+        {
+          "id": "themeSection",
+          "type": "column",
+          "w": "pw:1.0",
+          "h": "auto",
+          "gap": "Gap.sm",
+          "children": [
+            {
+              "type": "text",
+              "text": "Theme",
+              "font": "Title.Medium",
+              "color": "Text.Primary",
+              "align": "left",
+              "w": "pw:1.0",
+              "h": "sh:0.03"
+            },
+            {
+              "id": "themeRow",
+              "type": "row",
+              "w": "pw:1.0",
+              "h": "sh:0.04",
+              "gap": "Gap.sm",
+              "children": [
+                {
+                  "id": "themeCyber",
+                  "type": "button",
+                  "label": "Cyber",
+                  "action": "onThemeCyber",
+                  "buttonType": "nav",
+                  "w": "rw:1",
+                  "h": "ph:1.0"
+                },
+                {
+                  "id": "themeOcean",
+                  "type": "button",
+                  "label": "Ocean",
+                  "action": "onThemeOcean",
+                  "buttonType": "nav",
+                  "w": "rw:1",
+                  "h": "ph:1.0"
+                },
+                {
+                  "id": "themeSunset",
+                  "type": "button",
+                  "label": "Sunset",
+                  "action": "onThemeSunset",
+                  "buttonType": "nav",
+                  "w": "rw:1",
+                  "h": "ph:1.0"
+                },
+                {
+                  "id": "themeLight",
+                  "type": "button",
+                  "label": "Light",
+                  "action": "onThemeLight",
+                  "buttonType": "nav",
+                  "w": "rw:1",
+                  "h": "ph:1.0"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

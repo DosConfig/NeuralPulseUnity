@@ -49,6 +49,16 @@
       "h": "expand"
     },
     {
+      "id": "tapArea",
+      "type": "button",
+      "label": "",
+      "action": "onTap",
+      "buttonType": "ghost",
+      "anchor": "MC",
+      "w": "sw:1.0",
+      "h": "sh:1.0"
+    },
+    {
       "id": "versionText",
       "type": "text",
       "text": "$version",
