@@ -1,0 +1,64 @@
+{
+  "screen": "SplashScreen",
+  "bg": "Bg.Darkest",
+  "elements": [
+    {
+      "id": "spacerTop",
+      "type": "panel",
+      "w": "pw:1.0",
+      "h": "expand"
+    },
+    {
+      "id": "centerContent",
+      "type": "column",
+      "w": "sw:0.8",
+      "h": "auto",
+      "gap": "Gap.lg",
+      "children": [
+        {
+          "id": "title",
+          "type": "text",
+          "text": "NEURAL PULSE",
+          "font": "Display.Large",
+          "color": "Accent.Primary",
+          "align": "center",
+          "fontStyle": "bold"
+        },
+        {
+          "id": "subtitle",
+          "type": "text",
+          "text": "Match. Chain. Pulse.",
+          "font": "Body.Large",
+          "color": "Text.Muted",
+          "align": "center"
+        },
+        {
+          "id": "loadingText",
+          "type": "text",
+          "text": "$loadingStatus",
+          "font": "Body.Medium",
+          "color": "Text.Secondary",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "id": "spacerBottom",
+      "type": "panel",
+      "w": "pw:1.0",
+      "h": "expand"
+    },
+    {
+      "id": "versionText",
+      "type": "text",
+      "text": "$version",
+      "font": "Caption.Small",
+      "color": "Text.Muted",
+      "anchor": "BC",
+      "y": "cu:20",
+      "w": "sw:0.5",
+      "h": "cu:30",
+      "align": "center"
+    }
+  ]
+}
